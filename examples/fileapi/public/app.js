@@ -8,7 +8,7 @@ function onFilesSelected (e) {
   var totalFiles = files.length;
   var filesSent = 0;
   if (totalFiles) {
-    var uploader = new Uploader('ws://localhost:8080', function () {
+    var uploader = new Uploader('ws://' + location.host, function () {
       Array.prototype.slice.call(files, 0).forEach(function (file) {
         if (file.name === '.') {
           --totalFiles;
